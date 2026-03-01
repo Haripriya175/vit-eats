@@ -19,7 +19,8 @@ try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB Connected Successfully");
 } catch (err) {
-    console.error("MongoDB Connection Error:", err);
+    console.error("MongoDB Connection Error:", err.message);
+    console.error("TIP: Please verify your MongoDB Atlas IP Whitelist (allow access from anywhere 0.0.0.0/0 for testing).");
     process.exit(1);
 }
 

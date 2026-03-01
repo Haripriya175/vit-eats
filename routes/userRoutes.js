@@ -3,18 +3,7 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-// Register
-router.post("/register", async (req, res) => {
-    try {
-        const user = new User(req.body);
-        await user.save();
-        res.json(user);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
-
-// Get all users
+// GET ALL USERS
 router.get("/", async (req, res) => {
     try {
         const users = await User.find();
@@ -24,11 +13,27 @@ router.get("/", async (req, res) => {
     }
 });
 
+// TEST ROUTE
+router.get("/test", (req, res) => {
+    res.json({ message: "User API is working" });
+});
+
+// REGISTER USER
+router.post("/register", async (req, res) => {
+    try {
+        const { username, email, password } = req.body;
+        const newUser = new User({ username, email, password });
+        await newUser.save();
+        res.status(201).json({ message: "User registered successfully", user: newUser });
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+});
+
 // LOGIN USER
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
-
         const user = await User.findOne({ email });
 
         if (!user) {
