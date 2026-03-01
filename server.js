@@ -1,25 +1,27 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-require("dotenv").config();
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import userRoutes from "./routes/userRoutes.js";
+import restaurantRoutes from "./routes/restaurantRoutes.js";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-const userRoutes = require("./routes/userRoutes");
 app.use("/api/users", userRoutes);
+app.use("/api/restaurants", restaurantRoutes);
 
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log("MongoDB Connected Successfully"))
-.catch((err) => {
+try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB Connected Successfully");
+} catch (err) {
     console.error("MongoDB Connection Error:", err);
     process.exit(1);
-});
+}
 
 app.get("/", (req, res) => {
     res.send("VIT-Eats API Running");
