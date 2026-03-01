@@ -1,0 +1,58 @@
+I am a beginner-level student working on a VIT capstone project.
+Project title: VIT Eats (Food Ordering System).
+
+I want you to guide me from SCRATCH in a very simple, beginner-friendly way.
+
+Please do the following step-by-step:
+
+1. Explain the project idea in simple words.
+2. Provide the complete system architecture diagram (frontend, backend, database).
+3. Explain the architecture in text form.
+4. List all modules clearly:
+   - User Module
+   - Restaurant Module
+   - Admin Module
+   - Order Module
+   - Payment Module
+5. Provide a detailed flowchart (text-based) for:
+   - User registration
+   - Food ordering process
+6. Give ER Diagram explanation with entities and relationships.
+7. Provide database schema (tables/collections).
+8. Explain the technology stack used and why it is suitable for beginners.
+
+Implementation Part:
+9. Guide me step-by-step to create the project using commands:
+   - Folder creation
+   - File creation
+   - npm initialization
+   - Dependency installation
+10. Create backend using Node.js and Express with MongoDB.
+11. Provide complete code for:
+    - server.js
+    - database connection
+    - User model
+    - Restaurant model
+    - Order model
+    - Routes and controllers
+12. Explain every code section line-by-line in simple words.
+13. Show how to test APIs using Postman.
+14. Explain common errors (like npm execution policy error) and how to fix them.
+15. Explain how to run the project successfully.
+
+Capstone Documentation:
+16. Provide content for:
+    - Abstract
+    - Problem Statement
+    - Objectives
+    - System Design
+    - Module Description
+    - Future Enhancements
+17. Make everything suitable for VIT capstone submission.
+
+Important:
+- Assume I am a basic learner.
+- Explain everything slowly and clearly.
+- Use simple English.
+- Use step-by-step commands.
+- Do not skip any steps.
